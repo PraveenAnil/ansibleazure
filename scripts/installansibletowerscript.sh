@@ -24,6 +24,10 @@ yum install -y python-httplib
 yum install git -y
 yum install wget -y
 yum install sshpass -y
+yum install python-pip -y
+yum install python-wheel -y
+pip install azure
+pip install "pywinrm>=0.2.2"
 
 #Disable SSH Copy prompt#
 echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
