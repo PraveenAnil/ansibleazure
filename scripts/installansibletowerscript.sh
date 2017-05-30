@@ -5,7 +5,7 @@
 ## Argument 4 will be password for Client Vms  ##
 ## Argument 5 will be IP address of client VM 1 ##
 ## Argument 6 will be IP address of client VM 2 ##
-
+## Argument 6 will be Resource Group Name ##
 ## To execute this script run sudo su -c'sh installAnsibleTowerScript.sh Ansibleadminpassword Databaseadminpassword ClientVMsUsername ClientVMsPassword ClientVm01IP ClientVm02IP'  ##
 
 yum clean all
@@ -107,8 +107,13 @@ sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config
 
 git clone https://github.com/wmhussain/Spektra-Ansible-Labs.git
 cd Spektra-Ansible-Labs
-find . -type f -name "*.yml" -exec sed -i 's/ansibletrainingrg/rgname/g' {} +
-find . -type f -name "*.yml" -exec sed -i 's/akz44lpnhfs0na0w2017/strgname/g' {} +
+str1=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 15 ; echo '')
+str2=storg
+str3=$str2$str1
+
+
+find . -type f -name "*.yml" -exec sed -i 's/ansibletrainingrg/'$6'/g' {} +
+find . -type f -name "*.yml" -exec sed -i 's/akz44lpnhfs0na0w2017/'$str3'/g' {} +
 
 exit 0
 
