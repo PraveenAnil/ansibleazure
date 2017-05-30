@@ -105,6 +105,11 @@ sudo bash setup.sh
 setenforce 0
 sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config
 
+git clone https://github.com/wmhussain/Spektra-Ansible-Labs.git
+cd Spektra-Ansible-Labs
+find . -type f -name "*.yml" -exec sed -i 's/ansibletrainingrg/rgname/g' {} +
+find . -type f -name "*.yml" -exec sed -i 's/akz44lpnhfs0na0w2017/strgname/g' {} +
+
 exit 0
 
 exit 0
