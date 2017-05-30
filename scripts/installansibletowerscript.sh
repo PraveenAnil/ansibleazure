@@ -26,11 +26,19 @@ yum install wget -y
 yum install sshpass -y
 yum install python-pip -y
 yum install python-wheel -y
-pip install azure
+pip install --upgrade pip
+
 pip install "pywinrm>=0.2.2"
+pip install setuptools --upgrade 
+yum install openssl-devel
+yum install gcc
+pip install azure==2.0.0rc6 --upgrade
 
 #Disable SSH Copy prompt#
 echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+echo "PasswordAuthentication yes" >> /etc/ssh/ssh_config
+
+echo 'demouser:demoPassword1!' | chpasswd
 
 ## The following code generates SSH Keys and copies it to other hosts ##  
 ssh-keygen -f $HOME/.ssh/id_rsa -t rsa -b 4096 -N ''
