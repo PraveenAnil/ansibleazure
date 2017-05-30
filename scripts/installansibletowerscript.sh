@@ -104,9 +104,8 @@ sudo bash setup.sh
 ### Disable SELinux ###
 setenforce 0
 sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config
-
+cd /var/lib/awx/projects/
 git clone https://github.com/wmhussain/Spektra-Ansible-Labs.git
-cd Spektra-Ansible-Labs
 str1=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 15 ; echo '')
 str2=storg
 str3=$str2$str1
