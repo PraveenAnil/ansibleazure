@@ -30,8 +30,8 @@ pip install --upgrade pip
 
 pip install "pywinrm>=0.2.2"
 pip install setuptools --upgrade 
-yum install openssl-devel
-yum install gcc
+yum install openssl-devel -y
+yum install gcc -y
 pip install azure==2.0.0rc6 --upgrade
 
 #Disable SSH Copy prompt#
