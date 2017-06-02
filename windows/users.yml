@@ -1,8 +1,11 @@
 ---
-- name: Ensure user bob is present
-  win_user:
-    name: bob
-    password: B0bP4ssw0rd
-    state: present
-    groups:
-      - Users
+- name: test chocolatey with ansible
+  hosts: all
+  tasks:
+    - name: Ensure user bob is present
+      win_user:
+        name: bob
+        password: B0bP4ssw0rd
+        state: present
+        groups:
+          - Users
