@@ -22,7 +22,7 @@ pip install azure==2.0.0rc6 --upgrade
 
 #Disable SSH Copy prompt#
 echo "StrictHostKeyChecking no" >> /etc/ssh/sshd_config
-echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+#echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 sed -i 's/PasswordAuthentication\ no/PasswordAuthentication\ yes/g' /etc/ssh/sshd_config
 sed -i 's/ChallengeResponseAuthentication\ no/ChallengeResponseAuthentication\ yes/g' /etc/ssh/sshd_config
 echo 'demouser:demoPassword1!' | chpasswd
