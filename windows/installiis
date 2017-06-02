@@ -1,0 +1,11 @@
+---
+- name: installIISServer
+  hosts: all
+  tasks:
+    - name: Install IIS Web-Server with sub features and management tools
+      win_feature:
+        name: Web-Server
+        state: present
+        restart: True
+        include_sub_features: True
+        include_management_tools: True
