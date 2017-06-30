@@ -1,0 +1,10 @@
+---
+- name: test chocolatey with ansible
+  hosts: all
+  tasks:
+    - name: Ensure user bob is present
+      win_user:
+        name: bob
+        state: absent
+        groups:
+          - Users
